@@ -142,8 +142,14 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Balto * _Non
 @end
 
 
+@interface NSLayoutConstraint (SWIFT_EXTENSION(BaltoSDK))
+@end
+
+
 @interface UIDevice (SWIFT_EXTENSION(BaltoSDK))
 @property (nonatomic, readonly, copy) NSString * _Nonnull modelName;
++ (BOOL)isLandscape;
++ (BOOL)isPortrait;
 @end
 
 #pragma clang diagnostic pop
