@@ -40,7 +40,7 @@ You need to add script phase from 'BuildPhases'.
 
 1. Open your Xcode project. (If you use CocoaPods, open your Xcode workspace.)
 2. Add `Xcode->Project->BuildPhases->Run Script`
-3. Add the following a line to script editor.
+3. Add the following a line to script editor:
 
 ```bash
 /bin/sh "${PROJECT_DIR}/UpdraftSDK.framework/run.sh"
