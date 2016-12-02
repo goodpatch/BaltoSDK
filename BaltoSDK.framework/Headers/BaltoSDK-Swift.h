@@ -152,4 +152,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Balto * _Non
 + (BOOL)isPortrait;
 @end
 
+
+@interface UIImageView (SWIFT_EXTENSION(BaltoSDK))
+@end
+
 #pragma clang diagnostic pop

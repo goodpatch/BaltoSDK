@@ -10,6 +10,10 @@ Balto is the place where beta meets feedback. Distribute your test apps and get 
 
 ## Installation
 
+**Notice**
+
+Requires iOS 9.0+
+
 ### CocoaPods
 
 Add the following lines to your Podfile:
@@ -17,7 +21,7 @@ Add the following lines to your Podfile:
 ```
 use_frameworks!
 target 'TargetName' do
-  pod 'Balto-SDK', '>= 3.0.0-beta2'
+  pod 'Balto-SDK', '>= 3.0.0-beta3'
 end
 ```
 
