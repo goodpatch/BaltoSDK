@@ -43,7 +43,7 @@ You need to add script phase from 'BuildPhases'.
 3. Add the following a line to script editor:
 
 ```bash
-/bin/sh "${PROJECT_DIR}/UpdraftSDK.framework/run.sh"
+/bin/sh "${PROJECT_DIR}/BaltoSDK.framework/run.sh"
 # If you use CocoaPods
 #/bin/sh "${SRCROOT}/Pods/Balto-SDK/BaltoSDK.framework/run.sh"
 # If you use Carthage.
