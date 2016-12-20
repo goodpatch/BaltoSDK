@@ -21,7 +21,7 @@ Add the following lines to your Podfile:
 ```
 use_frameworks!
 target 'TargetName' do
-  pod 'Balto-SDK', '>= 3.0.0-beta3'
+  pod 'Balto-SDK', '>= 3.0.0-beta4'
 end
 ```
 
@@ -81,6 +81,21 @@ Balto.withCustomSwipe(numberOfTouchesRequired: Int, direction: UISwipeGestureRec
 Balto.withLongPress()
 // Custom long press
 Balto.withLongPress(minimumPressDuration: CFTimeInterval)
+```
+
+If you want to hide the menu of Balto, please add option parameter.
+
+```swift
+Balto.with(options: [kBaltoHideMenu: true])
+Balto.withLongPress(minimumPressDuration: 2.0, options: [kBaltoHideMenu: true])
+Balto.withCustomSwipe(numberOfTouchesRequired: 2, direction: .down, options: [kBaltoHideMenu: true])
+```
+
+If you want to change the display for each screen, please call these methods at that timing.
+
+```swift
+Balto.show()
+Balto.hide()
 ```
 
 You need some setting if you use the Objective-C.
