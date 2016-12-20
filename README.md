@@ -21,7 +21,7 @@ Add the following lines to your Podfile:
 ```
 use_frameworks!
 target 'TargetName' do
-  pod 'Balto-SDK', '>= 3.0.0-beta4'
+  pod 'Balto-SDK', '>= 3.0.0-beta5'
 end
 ```
 
