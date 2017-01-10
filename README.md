@@ -1,9 +1,4 @@
-**Notice**
-
-Now [Balto](https://www.balto.io/) is still in beta.  
-If you would like to use Balto, please contact us.
-
-# Balto-SDK
+# BaltoSDK
 
 BaltoSDK is a SDK for [Balto](https://www.balto.io/).  
 Balto is the place where beta meets feedback. Distribute your test apps and get instant feedback from your team directly from the app.
@@ -21,7 +16,7 @@ Add the following lines to your Podfile:
 ```
 use_frameworks!
 target 'TargetName' do
-  pod 'Balto-SDK', '>= 3.0.0-beta4'
+  pod 'BaltoSDK', '>= 3.0.0'
 end
 ```
 
@@ -30,7 +25,7 @@ end
 Add the following lines to your Cartfile:
 
 ```
-github "goodpatch/Balto-SDK"
+github "goodpatch/BaltoSDK"
 ```
 
 ### To manually add to your project

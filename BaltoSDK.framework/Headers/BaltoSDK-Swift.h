@@ -137,9 +137,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Balto * _Non
 + (void)withCustomSwipeWithNumberOfTouchesRequired:(NSInteger)numberOfTouchesRequired direction:(UISwipeGestureRecognizerDirection)direction;
 + (void)withCustomSwipeWithNumberOfTouchesRequired:(NSInteger)numberOfTouchesRequired direction:(UISwipeGestureRecognizerDirection)direction options:(NSDictionary<NSString *, id> * _Nonnull)options;
 + (void)returnFromBaltoWithOpenURL:(NSURL * _Nonnull)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> * _Nonnull)options;
-- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer;
 + (void)show;
 + (void)hide;
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer;
 @end
 
 
