@@ -44,7 +44,7 @@ You need to add script phase from 'BuildPhases'.
 ```bash
 /bin/sh "${PROJECT_DIR}/BaltoSDK.framework/run.sh"
 # If you use CocoaPods
-#/bin/sh "${SRCROOT}/Pods/Balto-SDK/BaltoSDK.framework/run.sh"
+#/bin/sh "${SRCROOT}/Pods/BaltoSDK/BaltoSDK.framework/run.sh"
 # If you use Carthage.
 #/bin/sh "${SRCROOT}/Carthage/Build/iOS/BaltoSDK.framework/run.sh"
 ```
