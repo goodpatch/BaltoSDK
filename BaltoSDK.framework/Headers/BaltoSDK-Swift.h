@@ -119,6 +119,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import UIKit;
 @import CoreFoundation;
 @import Foundation;
+@import CoreGraphics;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -148,6 +149,14 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Balto * _Non
 
 
 @interface Balto (SWIFT_EXTENSION(BaltoSDK))
+@end
+
+@class NSCoder;
+
+SWIFT_CLASS("_TtC8BaltoSDK13GradationView")
+@interface GradationView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
