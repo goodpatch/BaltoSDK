@@ -72,36 +72,56 @@ fi
 
 UrlTypesKey="CFBundleURLTypes"
 UrlSchemesKey="CFBundleURLSchemes"
+TypeRoleKey="CFBundleTypeRole"
 
 exist=1
 type=0
+
 urlTypeCheck=$($PLIST_BUDDY -c "Print ${UrlTypesKey}" "${PLIST}")
 if [ $? = 1 ]; then
-    exist=0
-    type=0
+  exist=0
+  type=0
 else
-    urlTypeCheck=$($PLIST_BUDDY -c "Print ${UrlTypesKey}:0:${UrlSchemesKey}" "${PLIST}")
-    if [ $? = 1 ]; then
-        exist=0
-        type=1
-    fi
+  urlTypeCheck=$($PLIST_BUDDY -c "Print ${UrlTypesKey}" "${PLIST}")
+  # if [[ $urlTypeCheck =~ ${UrlSchemesKey}\ =\ Array\ \{\ balto\-(.*)\ \} ]] ; then
+  if [[ $urlTypeCheck =~ balto\-(.*) ]] ; then
+    echo "Hit"
+    exist=1
+  else
+    exist=0
+    type=1
+  fi
 fi
 
 if [ $exist = 0 ]; then
-    if [ $type = 0 ]; then
-        $PLIST_BUDDY -c "Add :${UrlTypesKey} array" "${PLIST}"
-    fi
-    len=12
-    char='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890'
-    char_len=${#char}
-    i=0
-    while [ $i -lt $len ]
-    do
-        start=$(( ($RANDOM % $char_len) ))
-        str=${str}${char:${start}:1}
-        i=$(( i+1 ))
-    done
+  len=12
+  char='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890'
+  char_len=${#char}
+  i=0
+  while [ $i -lt $len ]
+  do
+      start=$(( ($RANDOM % $char_len) ))
+      str=${str}${char:${start}:1}
+      i=$(( i+1 ))
+  done
+  new_scheme="balto-"${str}
 
+  if [ $type = 0 ]; then
+    $PLIST_BUDDY -c "Add :${UrlTypesKey} array" "${PLIST}"
+    $PLIST_BUDDY -c "Add :${UrlTypesKey}:0:${TypeRoleKey} string 'Editor'" "${PLIST}"
     $PLIST_BUDDY -c "Add :${UrlTypesKey}:0:${UrlSchemesKey} array" "${PLIST}"
-    $PLIST_BUDDY -c "Add :${UrlTypesKey}:0:${UrlSchemesKey}:0 string ${str}" "${PLIST}"
+    $PLIST_BUDDY -c "Add :${UrlTypesKey}:0:${UrlSchemesKey}:0 string ${new_scheme}" "${PLIST}"
+  else
+    LINES=$($PLIST_BUDDY -c "Print ${UrlTypesKey}" "${PLIST}" | grep = | tr -d ' ')
+    COUNTER=0
+    for PLIST_ITEMS in $LINES;
+    do
+      if [[ ${PLIST_ITEMS} =~ ${UrlSchemesKey} ]] ; then
+        COUNTER=`expr ${COUNTER} + 1`
+      fi
+    done
+    $PLIST_BUDDY -c "Add :${UrlTypesKey}:${COUNTER}:${TypeRoleKey} string 'Editor'" "${PLIST}"
+    $PLIST_BUDDY -c "Add :${UrlTypesKey}:${COUNTER}:${UrlSchemesKey} array" "${PLIST}"
+    $PLIST_BUDDY -c "Add :${UrlTypesKey}:${COUNTER}:${UrlSchemesKey}:0 string ${new_scheme}" "${PLIST}"
+  fi
 fi
