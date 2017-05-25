@@ -83,7 +83,6 @@ if [ $? = 1 ]; then
   type=0
 else
   urlTypeCheck=$($PLIST_BUDDY -c "Print ${UrlTypesKey}" "${PLIST}")
-  # if [[ $urlTypeCheck =~ ${UrlSchemesKey}\ =\ Array\ \{\ balto\-(.*)\ \} ]] ; then
   if [[ $urlTypeCheck =~ balto\-(.*) ]] ; then
     echo "Hit"
     exist=1
