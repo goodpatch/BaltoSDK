@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "BaltoSDK"
-  s.version      = "3.1.3"
+  s.version      = "4.0.0"
   s.summary      = "Balto iOS SDK."
   s.description  = <<-DESC
                     Balto lets you leave feadback with a simple swipe on the screen.

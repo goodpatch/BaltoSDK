@@ -135,33 +135,43 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import ObjectiveC;
 @import UIKit;
 @import CoreFoundation;
-@import Foundation;
 @import CoreGraphics;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
-@class UIGestureRecognizer;
 
 SWIFT_CLASS("_TtC8BaltoSDK5Balto")
-@interface Balto : NSObject <UIGestureRecognizerDelegate>
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Balto * _Nonnull sharedInstance;)
-+ (Balto * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
+@interface Balto : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Balto * _Nonnull shared;)
++ (Balto * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+@class UIGestureRecognizer;
+
+@interface Balto (SWIFT_EXTENSION(BaltoSDK)) <UIGestureRecognizerDelegate>
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+@interface Balto (SWIFT_EXTENSION(BaltoSDK))
+@end
+
+
+@interface Balto (SWIFT_EXTENSION(BaltoSDK))
+@end
+
+
+@interface Balto (SWIFT_EXTENSION(BaltoSDK))
 + (void)with;
 + (void)withOptions:(NSDictionary<NSString *, id> * _Nonnull)options;
 + (void)withLongPressWithMinimumPressDuration:(CFTimeInterval)minimumPressDuration;
 + (void)withLongPressWithMinimumPressDuration:(CFTimeInterval)minimumPressDuration options:(NSDictionary<NSString *, id> * _Nonnull)options;
 + (void)withCustomSwipeWithNumberOfTouchesRequired:(NSInteger)numberOfTouchesRequired direction:(UISwipeGestureRecognizerDirection)direction;
 + (void)withCustomSwipeWithNumberOfTouchesRequired:(NSInteger)numberOfTouchesRequired direction:(UISwipeGestureRecognizerDirection)direction options:(NSDictionary<NSString *, id> * _Nonnull)options;
-+ (void)returnFromBaltoWithOpenURL:(NSURL * _Nonnull)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> * _Nonnull)options;
 + (void)show;
 + (void)hide;
-- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-@interface Balto (SWIFT_EXTENSION(BaltoSDK))
 @end
 
 
@@ -181,14 +191,27 @@ SWIFT_CLASS("_TtC8BaltoSDK13GradationView")
 @end
 
 
+@interface UIColor (SWIFT_EXTENSION(BaltoSDK))
+@end
+
+
 @interface UIDevice (SWIFT_EXTENSION(BaltoSDK))
-@property (nonatomic, readonly, copy) NSString * _Nonnull modelName;
-+ (BOOL)isLandscape SWIFT_WARN_UNUSED_RESULT;
-+ (BOOL)isPortrait SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+@interface UIImage (SWIFT_EXTENSION(BaltoSDK))
 @end
 
 
 @interface UIImageView (SWIFT_EXTENSION(BaltoSDK))
+@end
+
+
+@interface UIView (SWIFT_EXTENSION(BaltoSDK))
+@end
+
+
+@interface UIWindow (SWIFT_EXTENSION(BaltoSDK))
 @end
 
 #pragma clang diagnostic pop

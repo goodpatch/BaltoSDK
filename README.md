@@ -3,11 +3,18 @@
 BaltoSDK is a SDK for [Balto](https://www.balto.io/).  
 Balto is the place where beta meets feedback. Distribute your test apps and get instant feedback from your team directly from the app.
 
+## **Notification!**
+
+Version 4.0.0 is a big update. Specification has been greatly changed.  
+But do not be tired.  
+To migrate to version 4.0.0, just remove `Balto.returnFromBalto` method and it will be completed.
+
 ## Installation
 
 **Notice**
 
-Requires iOS 9.0+
+Requires iOS 9.0+  
+Requires Xcode 8.3.3+
 
 ### CocoaPods
 
@@ -16,7 +23,7 @@ Add the following lines to your Podfile:
 ```
 use_frameworks!
 target 'TargetName' do
-  pod 'BaltoSDK', '>= 3.0.0'
+  pod 'BaltoSDK', '>= 4.0.0'
 end
 ```
 
@@ -51,7 +58,7 @@ You need to add script phase from 'BuildPhases'.
 
 ## Usage
 
-Add the following lines to `AppDelegate.swift`.
+Add the following lines to `AppDelegate.swift` or `AppDelegate.m`.
 
 ```swift
 import BaltoSDK
@@ -60,10 +67,14 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     Balto.with()
     return true
 }
+```
 
-func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-    Balto.returnFromBalto(openURL: url, options: options)
-    return true
+```objective-c
+#import <BaltoSDK/BaltoSDK.h>
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [Balto with];
+    return YES;
 }
 ```
 
