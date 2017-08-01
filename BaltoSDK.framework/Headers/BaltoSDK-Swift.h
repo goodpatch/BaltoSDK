@@ -145,6 +145,8 @@ SWIFT_CLASS("_TtC8BaltoSDK5Balto")
 @interface Balto : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Balto * _Nonnull shared;)
 + (Balto * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kBaltoHideMenu;)
++ (NSString * _Nonnull)kBaltoHideMenu SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 

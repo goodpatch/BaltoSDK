@@ -97,6 +97,12 @@ Balto.withLongPress(minimumPressDuration: 2.0, options: [kBaltoHideMenu: true])
 Balto.withCustomSwipe(numberOfTouchesRequired: 2, direction: .down, options: [kBaltoHideMenu: true])
 ```
 
+```objective-c
+[Balto withOptions: @{[Balto kBaltoHideMenu]: @YES}];
+[Balto withLongPressWithMinimumPressDuration: 2.0 options: @{[Balto kBaltoHideMenu]: @YES}];
+[Balto withCustomSwipeWithNumberOfTouchesRequired: 2 direction: UISwipeGestureRecognizerDirectionDown options: @{[Balto kBaltoHideMenu]: @YES}];
+```
+
 If you want to change the display for each screen, please call these methods at that timing.
 
 ```swift
