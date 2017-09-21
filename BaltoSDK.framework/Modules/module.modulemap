@@ -7,4 +7,5 @@ framework module BaltoSDK {
 
 module BaltoSDK.Swift {
     header "BaltoSDK-Swift.h"
+    requires objc
 }
